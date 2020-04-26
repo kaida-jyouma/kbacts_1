@@ -224,6 +224,7 @@ function reset() {
 function re_start() {
     total = 0;
     times = 0;
+    left = 0;
     course(types);
 }
 function mainMenu() {
