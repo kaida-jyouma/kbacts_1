@@ -565,7 +565,7 @@ function ranking() {
             return options[x];
         }).join(', ') + '</li></ul><br><ul class="ul_in"><li class="lipart">4</li><li class="lipart">' + json[4]["score"] + '</li><li class="lipart">' + json[4]["push"] + '</li><li class="lipart">' + courses[parseInt(json[4]["course"]) - 1] + '</li><li class="lipart">' + json[4]["option"].toString().split("").map(function(x) {
             return options[x];
-        }).join(', ') + '</li></ul><br><ul class="ul_in" id="pushdis"><li class="lipart">past</li><li class="lipart">' + json[5]["score"] + '</li><li class="lipart">' + json[5]["push"] + '</li><li class="lipart">' + courses[parseInt(json[5]["course"]) - 1] + '</li><li class="lipart">' + json[5]["option"].toString().split("").map(function(x) {
+        }).join(', ') + '</li></ul><br><ul class="ul_in" id="pushdis"><li class="lipart">max_past</li><li class="lipart">' + json[5]["score"] + '</li><li class="lipart">' + json[5]["push"] + '</li><li class="lipart">' + courses[parseInt(json[5]["course"]) - 1] + '</li><li class="lipart">' + json[5]["option"].toString().split("").map(function(x) {
             return options[x];
         }).join(', ') + '</li></ul><br></li><br><br>' + "<input type='button' class='selector' id='sel_menu' onclick='branch_0()' value='Back'><br>";
     }
