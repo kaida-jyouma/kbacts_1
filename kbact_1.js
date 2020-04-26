@@ -484,7 +484,7 @@ function result_format() {
             rank_now = 6;
         }
         if (s1 > pushl) {
-            document.getElementById('ranks').innerHTML = '最高連打数更新';
+            document.getElementById('ranks').innerHTML = '最大past値更新';
             rank_now = 5;
             json[5]["score"] = total;
             json[5]["push"] = s1;
@@ -511,7 +511,7 @@ function result_format() {
             document.getElementById('ranks').innerHTML = 'デバイス内ランキング4位達成';
             break;
         case 5:
-            document.getElementById('ranks').innerHTML = '最高連打数更新';
+            document.getElementById('ranks').innerHTML = '最大past値更新';
             break;
         case 6:
             document.getElementById('ranks').innerHTML = 'ランキング圏外';
