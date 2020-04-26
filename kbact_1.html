@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>連打チャレンジ[裏]</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="kbact_1.css" type="text/css" media="all">
+    <script src="kbact_1.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body id="body0" onkeydown="keyset()" onkeyup="keyplus()">
+    <h1 id='title'>連打チャレンジ[裏]</h1>
+    <div id="main">
+        <p class='msg_c' style="margin-bottom: 7.5px;" onclick="scplc()">コースを選択してください<br><span style='font-size: 17.5px;'>(カッコ内はオプション操作)</span></p>
+        <p class='msg_c' id='alert'>※製作者は、このゲームをプレイして起きた損害の責任は負いません<span id="ck_0">。</span></p>
+        <div id="select_course">
+            <input type="button" class='selector' id="sel1" onclick='course(1)' value="上下左右&#32;(Reset)"><br>
+            <input type="button" class='selector' id="sel2" onclick='course(2)' value="D/F/J/K"><br>
+            <input type="button" class='selector' id="sel3" onclick='course(3)' value="スペース"><br>
+            <input type="button" class='selector' id="sel4" onclick='course(4)' value="エンター"><br>
+            <input type="button" class='selector' id="sel5" onclick='course(5)' value="A~Z&#32;/&#32;1~9"><br>
+            <input type="button" class='selector' id="sel6" onclick='course(6)' value="お好きな4キー"><br>
+            <input type="button" class='selector' id="sel7" onclick='course(7)' value="マウスクリック"><br>
+            <hr color="#000000" size="2" width="80%" noshade="noshade" style="text-align: center; border-style: dashed;" onclick="clear()">
+            <input type="button" class='selector' id="sel8" onclick='ranking()' value="ランキングを表示"><br>
+            <input type="button" class='selector' id="sel9" onclick='checker()' value="コントローラー"><br>
+        </div>
+    </div>
+    <input type="button" hidden="hidden" id="hidbtn"><br>
+</body>
+</html>

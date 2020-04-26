@@ -1,0 +1,143 @@
+html{
+    background-color: #f1f4fb;
+    text-align: center;
+}
+#title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 200;
+    margin: 0px;
+    user-select: none;
+}
+#select_course{
+    font-size: 18px;
+    text-align: inherit;
+}
+#msg_c{
+    font-size: 22px;
+}
+.msg_c{
+    font-size: 22px;
+    user-select: none;
+}
+.selector{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-weight: 300;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+}
+.selector:hover{
+    padding-left: 2px;
+    border-color: #d0ff9c;
+    padding-top: 0px;
+    background-color: #d0ff9c;
+}
+.selector:focus{
+    padding-left: 2px;
+    border-color: #d0ff9c;
+    padding-top: 0px;
+    background-color: #d0ff9c;
+    outline: none;
+}
+#dispcourse{
+    font-size: 19.5px;
+    font-weight: 400;
+    user-select: none;
+}
+#dispkey{
+    font-family: Monospace;
+    user-select: none;
+}
+#showtimes #showctd{
+    font-family: Monospace;
+    user-select: none;
+}
+#set01{
+    text-align: center;
+    user-select: none;
+}
+.clickwin{
+    height: 350px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-weight: 300;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+    font-size: 25px;
+    text-align: center;
+    user-select: none;
+}
+.clickwin:focus{
+    outline: none;
+    background-color: #d0ff9c;
+}
+.p_score{
+    font-size: 19.5px;
+    user-select: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.lipar{
+    float: left;
+    list-style: none;
+    width: 45%;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #000000;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    margin-top: 10px;
+    padding-bottom: 2px;
+    font-size: 22.5px;
+    font-weight: 200;
+}
+.lipart{
+    float: left;
+    list-style: none;
+    width: 18.5%;
+    border-bottom: 1.5px;
+    border-style: solid;
+    border-color: #000000;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+ul{
+    list-style: none;
+}
+.wsets{
+    margin-top: 2px;
+    list-style: none;
+    margin-left: 5%;
+}
+.ul-des{
+    padding: 0px;
+}
+#alert{
+    margin-top: 3px;
+    margin-bottom: 22px;
+    font-size: 15px;
+}
+.ul_in{
+    margin-left: 0px;
+    padding-left: 0px;
+}
+#pushdis{
+    margin-top: 20px;
+}
+#hr_001{
+    text-align: center;
+    border-style: dashed;
+}
