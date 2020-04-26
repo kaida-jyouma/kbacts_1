@@ -149,7 +149,7 @@ function course(x) {
         break;
     case 3:
         keynums = [32];
-        score = 900;
+        score = 700;
         if (cl) {
             trp = true;
             opt.push(2);
@@ -157,7 +157,7 @@ function course(x) {
         break;
     case 4:
         keynums = [13];
-        score = 900;
+        score = 750;
         if (cl) {
             half = true;
             opt.push(3);
@@ -165,7 +165,7 @@ function course(x) {
         break;
     case 5:
         keynums = nums;
-        score = 180;
+        score = 250;
         if (cl) {
             p5 = true;
             opt.push(4);
@@ -177,7 +177,7 @@ function course(x) {
         break;
     case 7:
         keynums = ['mouse'];
-        score = 870;
+        score = 750;
         break;
     default:
         b_s = true;
