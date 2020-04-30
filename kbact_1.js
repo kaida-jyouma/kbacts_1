@@ -24,6 +24,7 @@ var cst;
 var options = ['-', '2x', '4x', 't/2', '+5'];
 var rank_now = null;
 var courses = ['↑↓←→', 'D/F/J/K', 'Space', 'Enter', 'A~Z/1~9', '4キー', 'Click', '-'];
+var scrk = ["D", "C", "B", "BB", "BBB", "A", "AA", "AAA", "S", "S+", "SS", "SS+", "SSS", "SSS+"];
 var k1 = {
     8: 'BackSpace',
     13: 'Enter',
@@ -165,7 +166,7 @@ function course(x) {
         break;
     case 5:
         keynums = nums;
-        score = 250;
+        score = 270;
         if (cl) {
             p5 = true;
             opt.push(4);
@@ -393,7 +394,7 @@ function result_format() {
     if (opt_now.length <= 0)
         opt_now.push(0);
     document.getElementById('main').innerHTML = '<p class="msg_c">今回の記録</p><div id="scores"></div>';
-    document.getElementById('scores').innerHTML = '<p class="p_score">コース:&#32;<span>' + courses[types - 1] + '<p class="p_score">スコア:&#32;<span>' + total + '</span></p>' + '<p class="p_score">past:&#32;<span>' + s1 + '</span>, <!--span>' + (s1 / 10) + '打/秒</span--></p><p class="p_score"><span id="ranks"></span><p><p class="p_score">Option:&#32;<span id="op"></span><p>' + "<input type='button' class='selector' id='sel_rank' onclick='ranking()' value='ランキングを表示'><br>" + "<input type='button' class='selector' id='rest_btn' onclick='re_start()' value='Re:&#32;Start'><br>" + "<input type='button' class='selector' id='sel_menu' onclick='mainMenu()' value='Goto:&#32;MainMenu'><br>";
+    document.getElementById('scores').innerHTML = '<p class="p_score">コース:&#32;<span>' + courses[types - 1] + '<p class="p_score">スコア:&#32;<span>' + total + '</span></p>' + '<p class="p_score">past:&#32;<span>' + s1 + '</span> / <span>' + (cst * 100) + '</span></p><p class="p_score"><span id="ranks"></span><p><p class="p_score">Option:&#32;<span id="op"></span><p>' + "<input type='button' class='selector' id='sel_rank' onclick='ranking()' value='ランキングを表示'><br>" + "<input type='button' class='selector' id='rest_btn' onclick='re_start()' value='Re:&#32;Start'><br>" + "<input type='button' class='selector' id='sel_menu' onclick='mainMenu()' value='Goto:&#32;MainMenu'><br>";
     document.getElementById('op').innerHTML = opt_now.map(function(x) {
         return options[x];
     }).join(', ');
@@ -545,9 +546,11 @@ function showresults() {
     //     times *= 2;
     // }
     total = score * s1;//score * times + (score * 10) * parseInt((times - (times % 100)) / 100);
+    // if (past)
     // console.log("nt1 - nt0");
     // console.log(nt1 - nt0);
     // console.log(score);
+    // opt_now = scrk[];
     setTimeout(result_format(), 3000);
 }
 function ranking() {
