@@ -394,10 +394,8 @@ function result_format() {
     if (opt_now.length <= 0)
         opt_now.push(0);
     document.getElementById('main').innerHTML = '<p class="msg_c">今回の記録</p><div id="scores"></div>';
-    document.getElementById('scores').innerHTML = '<p class="p_score">コース:&#32;<span>' + courses[types - 1] + '<p class="p_score">スコア:&#32;<span>' + total + '</span></p>' + '<p class="p_score">past:&#32;<span>' + s1 + '</span> / <span>' + (cst * 100) + '</span></p><p class="p_score"><span id="ranks"></span><p><p class="p_score">Option:&#32;<span id="op"></span><p>' + "<input type='button' class='selector' id='sel_rank' onclick='ranking()' value='ランキングを表示'><br>" + "<input type='button' class='selector' id='rest_btn' onclick='re_start()' value='Re:&#32;Start'><br>" + "<input type='button' class='selector' id='sel_menu' onclick='mainMenu()' value='Goto:&#32;MainMenu'><br>";
-    document.getElementById('op').innerHTML = opt_now.map(function(x) {
-        return options[x];
-    }).join(', ');
+    document.getElementById('scores').innerHTML = '<p class="p_score">コース:&#32;<span>' + courses[types - 1] + '<p class="p_score">スコア:&#32;<span>' + total + '</span></p>' + '<p class="p_score">past:&#32;<span>' + s1 + '</span> / <span>' + (cst * 100) + '</span></p><p class="p_score"><span id="ranks"></span><p><p class="p_score">Rank:&#32;<span id="op"></span><p>' + "<input type='button' class='selector' id='sel_rank' onclick='ranking()' value='ランキングを表示'><br>" + "<input type='button' class='selector' id='rest_btn' onclick='re_start()' value='Re:&#32;Start'><br>" + "<input type='button' class='selector' id='sel_menu' onclick='mainMenu()' value='Goto:&#32;MainMenu'><br>";
+    document.getElementById('op').innerHTML = rank_now//opt_now.map(function(x) {return options[x];}).join(', ');
     var json = JSON.parse(lst.getItem('#keyrank1'));
     if (first_0) {
         var pushl = 0;
@@ -426,9 +424,7 @@ function result_format() {
             json[1]["score"] = total;
             json[1]["push"] = s1;
             json[1]["course"] = types;
-            json[1]["option"] = parseInt(opt_now.map(function(x) {
-                return x.toString();
-            }).join(''));
+            json[1]["option"] = rank_now// parseInt(opt_now.map(function(x) {return x.toString();}).join(''));
         } else if (total > parseInt(json[2]["score"])) {
             document.getElementById('ranks').innerHTML = 'デバイス内ランキング2位達成';
             rank_now = 2;
@@ -447,9 +443,7 @@ function result_format() {
             json[2]["score"] = total;
             json[2]["push"] = s1;
             json[2]["course"] = types;
-            json[2]["option"] = parseInt(opt_now.map(function(x) {
-                return x.toString();
-            }).join(''));
+            json[2]["option"] = rank_now// parseInt(opt_now.map(function(x) {return x.toString();}).join(''));
         } else if (total > parseInt(json[3]["score"])) {
             document.getElementById('ranks').innerHTML = 'デバイス内ランキング3位達成';
             rank_now = 3;
@@ -464,9 +458,7 @@ function result_format() {
             json[3]["score"] = total;
             json[3]["push"] = s1;
             json[3]["course"] = types;
-            json[3]["option"] = parseInt(opt_now.map(function(x) {
-                return x.toString();
-            }).join(''));
+            json[3]["option"] = rank_now// parseInt(opt_now.map(function(x) {return x.toString();}).join(''));
         } else if (total > parseInt(json[4]["score"])) {
             document.getElementById('ranks').innerHTML = 'デバイス内ランキング4位達成';
             rank_now = 4;
@@ -477,9 +469,7 @@ function result_format() {
             json[4]["score"] = total;
             json[4]["push"] = s1;
             json[4]["course"] = types;
-            json[4]["option"] = parseInt(opt_now.map(function(x) {
-                return x.toString();
-            }).join(''));
+            json[4]["option"] = rank_now// parseInt(opt_now.map(function(x) {return x.toString();}).join(''));
         } else {
             document.getElementById('ranks').innerHTML = 'ランキング圏外';
             rank_now = 6;
@@ -490,9 +480,7 @@ function result_format() {
             json[5]["score"] = total;
             json[5]["push"] = s1;
             json[5]["course"] = types;
-            json[5]["option"] = parseInt(opt_now.map(function(x) {
-                return x.toString();
-            }).join(''));
+            json[5]["option"] = rank_now// parseInt(opt_now.map(function(x) {return x.toString();}).join(''));
         }
     }
     if (first_0)
@@ -546,7 +534,36 @@ function showresults() {
     //     times *= 2;
     // }
     total = score * s1;//score * times + (score * 10) * parseInt((times - (times % 100)) / 100);
-    // if (past)
+    if (s1 >= 4250){
+        rank_now = (scrk[scrk.length - 1]);
+    }else if (s1 >= 4000){
+        rank_now = (scrk[scrk.length - 2]);
+    }else if (s1 >= 3500){
+        rank_now = (scrk[scrk.length - 3]);
+    }else if (s1 >= 3000){
+        rank_now = (scrk[scrk.length - 4]);
+    }else if (s1 >= 2500){
+        rank_now = (scrk[scrk.length - 5]);
+    }else if (s1 >= 2000){
+        rank_now = (scrk[scrk.length - 6]);
+    }else if (s1 >= 1500){
+        rank_now = (scrk[scrk.length - 7]);
+    }else if (s1 >= 1000){
+        rank_now = (scrk[scrk.length - 8]);
+    }else if (s1 >= 0){
+        rank_now = (scrk[scrk.length - 9]);
+    }else if (s1 >= -1000){
+        rank_now = (scrk[scrk.length - 10]);
+    }else if (s1 >= -2000){
+        rank_now = (scrk[scrk.length - 11]);
+    }else if (s1 >= -3000){
+        rank_now = (scrk[scrk.length - 12]);
+    }else if (s1 >= -4000){
+        rank_now = (scrk[scrk.length - 13]);
+    }else{
+        rank_now = ("F");
+    }
+    
     // console.log("nt1 - nt0");
     // console.log(nt1 - nt0);
     // console.log(score);
