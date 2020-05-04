@@ -65,59 +65,39 @@ if (lst.getItem('#keyrank1') === null) {
             "score": 0,
             "push": 0,
             "course": 8,
-            "option": 0
+            "option": "-"
         },
         2: {
             "score": 0,
             "push": 0,
             "course": 8,
-            "option": 0
+            "option": "-"
         },
         3: {
             "score": 0,
             "push": 0,
             "course": 8,
-            "option": 0
+            "option": "-"
         },
         4: {
             "score": 0,
             "push": 0,
             "course": 8,
-            "option": 0
+            "option": "-"
         },
         5: {
             "score": 0,
             "push": 0,
             "course": 8,
-            "option": 0
+            "option": "-"
         }
     });
     lst.setItem('#keyrank1', ranks);
 } else {
-    var olds = ['-', '2x', '4x', 't/2', '+5'];
-    var json = [];
-    var js0 = JSON.parse(lst.getItem('#keyrank1'));
-    var bl_1 = false;
-    for (i = 0; i < Object.keys(js0).length; i++)
-        json.push(js0[i + 1]["option"].length);
-    if (sum(json) > json.length) {
-        for (i = 0; i < Object.keys(json).length; i++) {
-            var itms = js0[i + 1]["option"];
-            var litms = itms.split(', ');
-            var l_0 = [];
-            for (j = 0; j < litms.length; j++) {
-                if (litms[j] === '1/2')
-                    litms[j] = 't/2';
-                else if (litms[j] === '3x')
-                    litms[j] = '4x';
-                l_0.push(olds.indexOf(litms[j]).toString());
-            }
-            js0[i + 1]["option"] = parseInt(l_0.sort().join(''));
-        }
-        console.log('js0');
-        console.log(JSON.stringify(js0));
-        localStorage.setItem('#keyrank1', JSON.stringify(js0));
-        window.alert('ランキングの保存バージョンが古いため、アップデートを行いました。\nまれにデータ等が消える場合がありますが、ご了承ください。');
+    if (document.getElementById('vsn').innerHTML !== "20200501-1"){
+        var json = [];
+        var js0 = JSON.parse(lst.getItem('#keyrank1'));
+        var bl_1 = false;
     }
 }
 var nums = Object.keys(key).map(str=>parseInt(str, 10));
@@ -577,17 +557,17 @@ function ranking() {
     } else {
         var json = JSON.parse(lst.getItem('#keyrank1'));
         // document.getElementById('main').innerHTML = '<p class="msg_c">準備中！<br>ちょっと待っててね。</p>' +"<input type='button' class='selector' id='sel_menu' onclick='branch_0()' value='Back'><br>";
-        document.getElementById('main').innerHTML = '<p class="msg_c">デバイス内ランキング</p><ul class="ul-des"><li class="wsets"><ul class="ul_in"><li class="lipart">順位<span id="spw" style="font-weight: 100;"></span></li><li class="lipart">スコア</li><li class="lipart">past</li><li class="lipart">コース</li><li class="lipart">Option</li></ul></li></ul><br>' + '<li class="wsets"><ul class="ul_in"><li class="lipart">1</li><li class="lipart">' + json[1]["score"] + '</li><li class="lipart">' + json[1]["push"] + '</li><li class="lipart">' + courses[parseInt(json[1]["course"]) - 1] + '</li><li class="lipart">' + json[1]["option"].toString().split("").map(function(x) {
+        document.getElementById('main').innerHTML = '<p class="msg_c">デバイス内ランキング</p><ul class="ul-des"><li class="wsets"><ul class="ul_in"><li class="lipart">順位<span id="spw" style="font-weight: 100;"></span></li><li class="lipart">スコア</li><li class="lipart">past</li><li class="lipart">コース</li><li class="lipart">Option</li></ul></li></ul><br>' + '<li class="wsets"><ul class="ul_in"><li class="lipart">1</li><li class="lipart">' + json[1]["score"] + '</li><li class="lipart">' + json[1]["push"] + '</li><li class="lipart">' + courses[parseInt(json[1]["course"]) - 1] + '</li><li class="lipart">' + json[1]["option"]/*.toString().split("").map(function(x) {
             return options[x];
-        }).join(', ') + '</li></ul><br><ul class="ul_in"><li class="lipart">2</li><li class="lipart">' + json[2]["score"] + '</li><li class="lipart">' + json[2]["push"] + '</li><li class="lipart">' + courses[parseInt(json[2]["course"]) - 1] + '</li><li class="lipart">' + json[2]["option"].toString().split("").map(function(x) {
+        }).join(', ')*/ + '</li></ul><br><ul class="ul_in"><li class="lipart">2</li><li class="lipart">' + json[2]["score"] + '</li><li class="lipart">' + json[2]["push"] + '</li><li class="lipart">' + courses[parseInt(json[2]["course"]) - 1] + '</li><li class="lipart">' + json[2]["option"]/*.toString().split("").map(function(x) {
             return options[x];
-        }).join(', ') + '</li></ul><br><ul class="ul_in"><li class="lipart">3</li><li class="lipart">' + json[3]["score"] + '</li><li class="lipart">' + json[3]["push"] + '</li><li class="lipart">' + courses[parseInt(json[3]["course"]) - 1] + '</li><li class="lipart">' + json[3]["option"].toString().split("").map(function(x) {
+        }).join(', ')*/ + '</li></ul><br><ul class="ul_in"><li class="lipart">3</li><li class="lipart">' + json[3]["score"] + '</li><li class="lipart">' + json[3]["push"] + '</li><li class="lipart">' + courses[parseInt(json[3]["course"]) - 1] + '</li><li class="lipart">' + json[3]["option"]/*.toString().split("").map(function(x) {
             return options[x];
-        }).join(', ') + '</li></ul><br><ul class="ul_in"><li class="lipart">4</li><li class="lipart">' + json[4]["score"] + '</li><li class="lipart">' + json[4]["push"] + '</li><li class="lipart">' + courses[parseInt(json[4]["course"]) - 1] + '</li><li class="lipart">' + json[4]["option"].toString().split("").map(function(x) {
+        }).join(', ')*/ + '</li></ul><br><ul class="ul_in"><li class="lipart">4</li><li class="lipart">' + json[4]["score"] + '</li><li class="lipart">' + json[4]["push"] + '</li><li class="lipart">' + courses[parseInt(json[4]["course"]) - 1] + '</li><li class="lipart">' + json[4]["option"]/*.toString().split("").map(function(x) {
             return options[x];
-        }).join(', ') + '</li></ul><br><ul class="ul_in" id="pushdis"><li class="lipart">max_past</li><li class="lipart">' + json[5]["score"] + '</li><li class="lipart">' + json[5]["push"] + '</li><li class="lipart">' + courses[parseInt(json[5]["course"]) - 1] + '</li><li class="lipart">' + json[5]["option"].toString().split("").map(function(x) {
+        }).join(', ')*/ + '</li></ul><br><ul class="ul_in" id="pushdis"><li class="lipart">max_past</li><li class="lipart">' + json[5]["score"] + '</li><li class="lipart">' + json[5]["push"] + '</li><li class="lipart">' + courses[parseInt(json[5]["course"]) - 1] + '</li><li class="lipart">' + json[5]["option"]/*.toString().split("").map(function(x) {
             return options[x];
-        }).join(', ') + '</li></ul><br></li><br><br>' + "<input type='button' class='selector' id='sel_menu' onclick='branch_0()' value='Back'><br>";
+        }).join(', ')*/ + '</li></ul><br></li><br><br>' + "<input type='button' class='selector' id='sel_menu' onclick='branch_0()' value='Back'><br>";
     }
 }
 function branch_0() {
@@ -605,13 +585,13 @@ function clear() {
                 json[i + 1]["score"] = 0;
                 json[i + 1]["push"] = 0;
                 json[i + 1]["course"] = 8;
-                json[i + 1]["option"] = 0;
+                json[i + 1]["option"] = "-";
             }
             if (scpl) {
                 json[5]["score"] = 0;
                 json[5]["push"] = 0;
                 json[5]["course"] = 8;
-                json[5]["option"] = 0;
+                json[5]["option"] = "-";
             }
             lst.setItem("#keyrank1", JSON.stringify(json));
             cl = false;
