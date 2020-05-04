@@ -395,7 +395,7 @@ function result_format() {
         opt_now.push(0);
     document.getElementById('main').innerHTML = '<p class="msg_c">今回の記録</p><div id="scores"></div>';
     document.getElementById('scores').innerHTML = '<p class="p_score">コース:&#32;<span>' + courses[types - 1] + '<p class="p_score">スコア:&#32;<span>' + total + '</span></p>' + '<p class="p_score">past:&#32;<span>' + s1 + '</span> / <span>' + (cst * 100) + '</span></p><p class="p_score"><span id="ranks"></span><p><p class="p_score">Rank:&#32;<span id="op"></span><p>' + "<input type='button' class='selector' id='sel_rank' onclick='ranking()' value='ランキングを表示'><br>" + "<input type='button' class='selector' id='rest_btn' onclick='re_start()' value='Re:&#32;Start'><br>" + "<input type='button' class='selector' id='sel_menu' onclick='mainMenu()' value='Goto:&#32;MainMenu'><br>";
-    document.getElementById('op').innerHTML = rank_now//opt_now.map(function(x) {return options[x];}).join(', ');
+    document.getElementById('op').innerHTML = rank_n//opt_now.map(function(x) {return options[x];}).join(', ');
     var json = JSON.parse(lst.getItem('#keyrank1'));
     if (first_0) {
         var pushl = 0;
