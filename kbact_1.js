@@ -94,11 +94,11 @@ if (lst.getItem('#keyrank1') === null) {
     });
     lst.setItem('#keyrank1', ranks);
 } else {
-    if (document.getElementById('vsn').innerHTML !== "20200501-1"){
-        var json = [];
-        var js0 = JSON.parse(lst.getItem('#keyrank1'));
-        var bl_1 = false;
-    }
+    // if (document.getElementById('vsn').innerHTML !== "20200501-1"){
+    //     var json = [];
+    //     var js0 = JSON.parse(lst.getItem('#keyrank1'));
+    //     var bl_1 = false;
+    // }
 }
 var nums = Object.keys(key).map(str=>parseInt(str, 10));
 function scplc() {
