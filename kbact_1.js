@@ -293,11 +293,11 @@ function startcheck(course) {
     if (opt.length <= 0)
         opt.push(0);
     var csn = ['上下左右キー', 'D / F / J / Kのみ', 'スペースキー', 'エンターキー', 'アルファベット+数字キー', 'エラー：Backを押してください', 'マウスクリック'];
-    document.getElementById('main').innerHTML = "<p class='msg_c'>これで開始します。よろしいですか？</p><p id='dispcourse'>コース:&#32;「&#32;" + csn[(course - 1)] + "&#32;」<br>Option:&#32;" + opt.sort(function(a, b) {
+    document.getElementById('main').innerHTML = "<p class='msg_c'>これで開始します。よろしいですか？</p><p id='dispcourse'>コース:&#32;「&#32;" + csn[(course - 1)] + "&#32;」<br><!--Option:&#32;" + opt.sort(function(a, b) {
         return a - b;
     }).map(function(x) {
         return options[x];
-    }).join(', ') + "</p><input type='button' class='selector' id='sel_st' onclick='gameStart()' value='Yes'><br><input type='button' class='selector' id='sel_menu' onclick='mainMenu()' value='Back'><br>";
+    }).join(', ') + "--></p><input type='button' class='selector' id='sel_st' onclick='gameStart()' value='Yes'><br><input type='button' class='selector' id='sel_menu' onclick='mainMenu()' value='Back'><br>";
 }
 function findFromValue(obj, val) {
     var result = null;
@@ -313,11 +313,11 @@ function startcheck_1() {
         opt.push(0);
     for (i = 0; i < keyname.length; i++)
         keynums.push(parseInt(findFromValue(key, keyname[i])));
-    document.getElementById('main').innerHTML = "<p class='msg_c'>これで開始します。よろしいですか？</p><p id='dispcourse'>コース:&#32;「&#32;お好きな4キー&#32;」</p><p id='dispcourse'>キー:&#32;「&#32;" + keyname.join(', ') + "&#32;」<br>Option:&#32;" + opt.sort(function(a, b) {
+    document.getElementById('main').innerHTML = "<p class='msg_c'>これで開始します。よろしいですか？</p><p id='dispcourse'>コース:&#32;「&#32;お好きな4キー&#32;」</p><p id='dispcourse'>キー:&#32;「&#32;" + keyname.join(', ') + "&#32;」<br><!--Option:&#32;" + opt.sort(function(a, b) {
         return a - b;
     }).map(function(x) {
         return options[x];
-    }).join(', ') + "</p><input type='button' class='selector' id='sel_st' onclick='gameStart()' value='Yes'><br><input type='button' class='selector' id='sel_menu' onclick='keyselect()' value='Back'><br><input type='button' class='selector' id='sel_menu' onclick='mainMenu()' value='Goto:&#32;MainMenu'><br>";
+    }).join(', ') + "--><br></p><input type='button' class='selector' id='sel_st' onclick='gameStart()' value='Yes'><br><input type='button' class='selector' id='sel_menu' onclick='keyselect()' value='Back'><br><input type='button' class='selector' id='sel_menu' onclick='mainMenu()' value='Goto:&#32;MainMenu'><br>";
 }
 function rest() {// if types
 }
