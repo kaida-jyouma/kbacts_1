@@ -255,7 +255,7 @@ function keyset() {
 function keyplus() {
     if (keyin) {
         if (b1 && keynums[0] !== "mouse") {
-            if (times > 99) {
+            if (times >= 99) {
                 nt1 = new Date().getTime();
                 clearInterval(si2);
                 clearInterval(se2);
@@ -272,7 +272,7 @@ function keyplus() {
 function keyplus_1() {
     if (keyin) {
         if (keynums[0] === 'mouse') {
-            if (times > 99) {
+            if (times >= 99) {
                 nt1 = new Date().getTime();
                 clearInterval(si2);
                 clearInterval(se2);
